@@ -91,7 +91,7 @@
 										<nav class="collapse">
 											<ul class="nav nav-pills" id="mainNav">
 												<li>
-													<a data-hash class="dropdown-item" data-hash data-hash-offset="120"
+													<a data-hash class="dropdown-item" data-hash data-hash-offset="170"
 														href="#aboutEmbox">
 														About Us
 													</a>
@@ -101,11 +101,11 @@
 														href="#services">Services</a>
 												</li>
 												<li>
-													<a class="dropdown-item" data-hash data-hash-offset="120"
+													<a class="dropdown-item" data-hash data-hash-offset="170"
 														href="#products">Products</a>
 												</li>
 												<li>
-													<a class="dropdown-item" data-hash data-hash-offset="120"
+													<a class="dropdown-item" data-hash data-hash-offset="170"
 														href="#partners">Partners</a>
 												</li>
 												<li>
@@ -239,7 +239,7 @@
 					</div>
 				</div>
 			</section>
-			<section id="services" class="bg-color-grey-scale-1  my-5 py-3">
+			<section id="services" class="bg-color-grey-scale-1 py-1">
 				<div class="container">
 					<div class="services">
 						<h2 class="font-weight-bold text-center mb-2">Services</h2>
@@ -670,7 +670,7 @@
 										</div>
 										<button type="submit" id="button" value="Send"
 										class="btn btn-light-2 btn-outline btn-rounded font-weight-semibold btn-contact-us"
-										data-loading-text="Loading...">Send</button>
+										>Send</button>
 									</form>
 								</div>
 							</div>
@@ -837,28 +837,30 @@
 	<script type="text/javascript">
 	</script>
 
-<script type="text/javascript">
-	(function () {
-		// https://dashboard.emailjs.com/admin/integration
-		emailjs.init('user_2vAHvKVqynjmLaicIzkgU');
-	})();
-</script>
-<script type="text/javascript">
-	// window.onload = function () {
+	<script type="text/javascript">
+		(function () {
+			// https://dashboard.emailjs.com/admin/integration
+			emailjs.init('user_2vAHvKVqynjmLaicIzkgU');
+		})();
+	</script>
+	<script type="text/javascript">
+		
 		document.getElementById('contact-form').addEventListener('submit', function (event) {
+			document.getElementById("button").innerHTML = "Sending...";
 			event.preventDefault();
-			// generate a five digit number for the contactNumber variable
-			// this.contactNumber.value = Math.random() * 100000 | 0;
-			// these IDs from the previous steps
 			emailjs.sendForm('service_vy7tcgg', 'template_2tgzlua', this)
 				.then(function () {
 					console.log('SUCCESS!');
+					document.getElementById("button").innerHTML = "Sent";
+					alert("Your message has been sent successfully. Thank you.");
+					document.getElementById("contact-form").reset();
 				}, function (error) {
 					console.log('FAILED...', error);
+					alert("Error!!! Please try again.");
 				});
 		});
-	// }
-</script>
+		
+	</script>
 
 </body>
 

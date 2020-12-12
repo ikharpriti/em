@@ -1,5 +1,7 @@
 /* reset starts */
-
+body {
+	overflow-x: hidden;
+}
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder{
 color: #b7c1c8 !important;
 }
@@ -250,7 +252,7 @@ textarea{
 	}
 	.carousel-item, .carousel-item img {
 		height: 504px;
-	    width: 100%;
+		width: 1210px;
 	}
 	.slider-head, .type-animation, .ml4, .ml3 {
 		line-height: 50px;
