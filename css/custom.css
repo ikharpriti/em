@@ -249,7 +249,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder{
 		.carousel-caption{
 			top: 43%;
 		}
-		.carousel-item, .carousel-item img {
+		.carousel-item, .landing-img {
 			height: 504px;
 			width: 1210px;
 		}
